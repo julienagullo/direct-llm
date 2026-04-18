@@ -32,8 +32,21 @@ Eliminates verbosity, maximizes information density, reduces token consumption.
 
 ## Token Impact
 
-Each request saves 50–150 tokens by eliminating preambles and social padding.  
-At 1M users: ~7.5–22.5 billion tokens saved/month.
+Measured across 5 tests on Claude Sonnet and Gemini 2.0 Flash:
+
+| Platform | Prompt type | Reduction |
+| :--- | :--- | :--- |
+| Claude | Decisional | −74% to −76% |
+| Claude | Textual analysis | −24% to −42% |
+| Gemini | Decisional | −9% to −14% |
+| Gemini | Technical | −32% |
+| Direct LLM Code | Architectural | +19% (expected — config pushes depth) |
+
+Gemini baselines are naturally less verbose; gains are smaller.  
+Direct LLM Code increases token count by design — more useful information per token, less filler prose.
+
+**At 1M users / 100 req / month:** ~15B tokens saved (conservative, decisional prompts only).  
+See `test/reports/global.md` for methodology and raw data.
 
 ## Import
 
