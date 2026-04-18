@@ -1,10 +1,10 @@
 # Import — ChatGPT
 
-ChatGPT does not support direct file import for GPT instructions. Use copy-paste via the GPT builder.
+ChatGPT uses **GPTs** to store persistent instructions.
 
 ---
 
-## Custom GPT (recommended)
+## Create a GPT
 
 Scope: a dedicated GPT, shareable via link.
 

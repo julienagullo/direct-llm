@@ -1,10 +1,25 @@
 # Import — Claude
 
-Two options: Project (persistent across conversations) or Style (applies to all chats).
+Two options: Style (applies to all chats) or Project (persistent across conversations).
 
 ---
 
-## Option 1: Claude Project (recommended)
+## Option 1: Claude Style (recommended)
+
+Scope: all conversations, selectable per chat.
+
+1. Go to [claude.ai](https://claude.ai) → **New conversation**
+2. Click the **Search and tools** menu on left corner
+3. Select **Create & edit styles.** in **Use style** option
+4. Create a new style with **Create custom style.** button
+5. Copy and paste the content of the chosen `.md` file
+6. Name the style (e.g., "Direct LLM") → Save
+
+Select the style from the style picker at the start of any conversation.
+
+---
+
+## Option 2: Claude Project
 
 Scope: one project, all conversations within it.
 
@@ -17,21 +32,6 @@ Scope: one project, all conversations within it.
 4. Paste → Save
 
 All conversations in that project use the configuration.
-
----
-
-## Option 2: Claude Style
-
-Scope: all conversations, selectable per chat.
-
-1. Go to [claude.ai](https://claude.ai) → Settings → **Custom styles** → **Create style**
-2. Select "Write my own instructions"
-3. Copy and paste the content of the chosen `.md` file
-4. Name the style (e.g., "Direct LLM") → Save
-
-Select the style from the style picker at the start of any conversation.
-
----
 
 ## Notes
 

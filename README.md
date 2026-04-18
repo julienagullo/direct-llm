@@ -1,6 +1,6 @@
 # Direct LLM
 
-Prompt configuration framework for ChatGPT, Gemini, and Claude.  
+Prompt configuration framework for Claude, Gemini and ChatGPT.
 Eliminates verbosity, maximizes information density, reduces token consumption.
 
 ## Models
@@ -39,9 +39,10 @@ At 1M users: ~7.5–22.5 billion tokens saved/month.
 
 1. Pick the model that fits your use case
 2. Copy the content of the corresponding file into your platform:
-   - **ChatGPT** → Custom GPT → Configure → Instructions
-   - **Gemini** → Gem manager → New Gem → Instructions
+
    - **Claude** → Project instructions or Custom style
+   - **Gemini** → Gem manager → New Gem → Instructions
+   - **ChatGPT** → Custom GPT → Configure → Instructions
 
 ```
 direct-llm.md        → base model
