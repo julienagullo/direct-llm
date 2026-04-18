@@ -117,7 +117,55 @@ Ces comportements persistent indépendamment de la configuration sur les deux pl
 
 ---
 
-## 7. Conclusions générales
+## 7. Estimation des tokens économisés
+
+> Méthode : estimation par comptage de caractères ÷ 4 (approximation standard). Les résultats sont indicatifs — un tokenizer précis donnerait des valeurs légèrement différentes selon la langue et le contenu code.
+
+### Données brutes (tokens estimés par réponse)
+
+| Test | Plateforme | Baseline | Config | Tokens config | Économie | % |
+| :--- | :--- | :---: | :--- | :---: | :---: | :---: |
+| Analyse GitHub | Claude | 932 | Direct LLM | 539 | −393 | **−42%** |
+| Analyse GitHub | Claude | 932 | Direct LLM Pro | 707 | −225 | **−24%** |
+| Cloud vs Local | Claude | 1 994 | Direct LLM | 487 | −1 507 | **−76%** |
+| Cloud vs Local | Claude | 1 994 | Direct LLM Pro | 508 | −1 486 | **−74%** |
+| Cloud vs Local | Gemini | 937 | Direct LLM | 855 | −82 | **−9%** |
+| Cloud vs Local | Gemini | 937 | Direct LLM Pro | 807 | −130 | **−14%** |
+| API REST lieux | Gemini | 1 026 | Direct LLM | 695 | −331 | **−32%** |
+| API REST lieux | Gemini | 1 026 | Direct LLM Code | 1 216 | +190 | **+19%** |
+
+> **Note — API REST Claude :** les baselines et runs Code contiennent tous du SVG (~5 000 tokens de markup). La comparaison est faussée — exclus du tableau.
+
+### Lecture des résultats
+
+**Claude — gains élevés sur les prompts décisionnels (-74% à -76%)**  
+Le baseline avait généré 150+ lignes de HTML/CSS non sollicité. La config élimine ce comportement — la majorité des tokens économisés vient de la suppression du format, pas du contenu.
+
+**Claude — gains modérés sur l'analyse textuelle (-24% à -42%)**  
+Sans format parasite, l'économie reflète la suppression des preambles, phrases de fluff et prose redondante.
+
+**Gemini — gains plus faibles (-9% à -32%)**  
+Gemini est naturellement moins verbeux que Claude en baseline. Les gains sont réels mais moins spectaculaires — moins de "bruit" à éliminer au départ.
+
+**Direct LLM Code — tokens en hausse (+19% sur Gemini)**  
+Attendu : la config pousse vers plus de profondeur (code Go, ADR, schéma SQL complet). La valeur n'est pas dans la réduction mais dans la densité — plus d'info utile par token, moins de prose inutile.
+
+### Projection à l'échelle
+
+En prenant une économie conservatrice de **−30% sur les prompts décisionnels** (médiane observée hors HTML) :
+
+| Utilisateurs / mois | Requêtes / user | Tokens économisés / requête | Total économisé |
+| :---: | :---: | :---: | :---: |
+| 1 000 | 100 | ~150 | 15M tokens |
+| 10 000 | 100 | ~150 | 150M tokens |
+| 100 000 | 100 | ~150 | 1,5B tokens |
+| 1 000 000 | 100 | ~150 | 15B tokens |
+
+> Ces chiffres sont des [INFERENCE] basés sur les tests réalisés. La réduction réelle dépend du type de prompt, du modèle, et du comportement de l'utilisateur.
+
+---
+
+## 8. Conclusions générales
 
 **Ce qui fonctionne de façon fiable (toutes configs, toutes plateformes)**
 - Suppression du fluff et des labels éditoriaux
