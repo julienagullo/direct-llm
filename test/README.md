@@ -1,36 +1,42 @@
-# Tests de Performance — Direct LLM
+# Tests — Direct LLM
 
-Protocole de comparaison entre réponses avec et sans configuration Direct LLM.
+Comparaison de réponses avec et sans configuration Direct LLM.
 
 ## Structure
 
 ```
 test/
-├── prompts/          prompts de test standardisés
-├── results/          résultats bruts par modèle et configuration
+├── results/          réponses brutes par prompt et configuration
 └── reports/          analyses comparatives
 ```
+
+## Protocole
+
+1. Même prompt, même modèle, même plateforme
+2. Run baseline (aucune config) → `results/<prompt>/baseline.md`
+3. Run(s) avec config → `results/<prompt>/direct-llm.md`, `direct-llm-pro.md`, `direct-llm-code.md`
+4. Analyse → `reports/<prompt>.md`
 
 ## Métriques
 
 | Métrique | Méthode |
 | :--- | :--- |
-| Tokens input | Comptage via tokenizer ou interface plateforme |
-| Tokens output | Comptage via tokenizer ou interface plateforme |
-| Token savings | (output_baseline - output_direct) / output_baseline × 100 |
-| Qualité info | Score manuel 1–5 : est-ce que la réponse répond complètement ? |
-| Direct Start | Oui/Non : la réponse commence-t-elle sans préambule ? |
+| Direct Start | La réponse commence-t-elle sans préambule ? |
 | Fluff détecté | Nombre de phrases non-informatives |
+| Format non sollicité | HTML, SVG, boutons interactifs générés sans demande |
+| `[INFERENCE]` | Correctement utilisé sur les données incertaines ? |
+| Profondeur technique | Présence d'insights absents du baseline |
 
-## Protocole
+## Rapport global
 
-1. Même prompt, même modèle, même température
-2. Version baseline (aucune config) → sauvegarder dans `results/`
-3. Version Direct LLM → sauvegarder dans `results/`
-4. Comparer les métriques → rapport dans `reports/`
+`reports/global.md` — synthèse de tous les tests, toutes plateformes.
 
-## Catégories de prompts
+## Tests réalisés
 
-- `general/` — questions générales
-- `technical/` — questions techniques / code
-- `strategic/` — décisions, analyse, trade-offs
+| Prompt | Configs testées | Plateforme | Rapport |
+| :--- | :--- | :--- | :--- |
+| Analyse repo GitHub | baseline, direct-llm, direct-llm-pro | Claude | `reports/analyse-github.md` |
+| Cloud vs Local LLM | baseline, direct-llm, direct-llm-pro | Claude | `reports/cloud-vs-local.md` |
+| API REST lieux touristiques | baseline, direct-llm, direct-llm-code | Claude | `reports/api-rest-lieux.md` |
+| Cloud vs Local LLM | baseline, direct-llm, direct-llm-pro | Gemini | `reports/cloud-vs-local-gemini.md` |
+| API REST lieux touristiques | baseline, direct-llm, direct-llm-code | Gemini | `reports/api-rest-lieux-gemini.md` |
