@@ -1,7 +1,7 @@
 # Rapport Global — Direct LLM Framework
 
 **Tests réalisés :** 5  
-**Plateformes :** Claude Sonnet, Gemini 2.0 Flash  
+**Plateformes :** Claude Sonnet 4, Gemini 3 Flash
 **Date :** 2026-04-18
 
 ---

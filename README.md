@@ -32,7 +32,7 @@ Eliminates verbosity, maximizes information density, reduces token consumption.
 
 ## Token Impact
 
-Measured across 5 tests on Claude Sonnet 4.6 and Gemini 3.0 Flash:
+Measured across 5 tests on Claude Sonnet 4 and Gemini 3 Flash:
 
 | Platform | Prompt type | Reduction |
 | :--- | :--- | :--- |
