@@ -37,12 +37,16 @@ At 1M users: ~7.5–22.5 billion tokens saved/month.
 
 ## Import
 
-Available for Claude (Project / Style), Gemini (Gem) and ChatGPT (Custom GPT).
+1. Pick the model that fits your use case
+2. Copy the content of the corresponding file into your platform:
+   - **ChatGPT** → Custom GPT → Configure → Instructions
+   - **Gemini** → Gem manager → New Gem → Instructions
+   - **Claude** → Project instructions or Custom style
 
 ```
-direct-llm/          claude.md  gemini.md  chatgpt.md
-direct-llm-pro/      claude.md  gemini.md  chatgpt.md
-direct-llm-code/     claude.md  gemini.md  chatgpt.md
+direct-llm.md        → base model
+direct-llm-pro.md    → advanced model
+direct-llm-code.md   → developer model
 ```
 
 See `docs/` for platform-specific import instructions.
