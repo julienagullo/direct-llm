@@ -2,8 +2,6 @@
 
 ChatGPT uses **GPTs** to store persistent instructions.
 
----
-
 ## Create a GPT
 
 Scope: a dedicated GPT, shareable via link.
@@ -18,8 +16,6 @@ Scope: a dedicated GPT, shareable via link.
 5. **Save** → choose visibility (private or public link)
 
 The GPT is accessible from the sidebar and can be shared via URL.
-
----
 
 ## Temporary (no GPT Builder access)
 

@@ -2,8 +2,6 @@
 
 Gemini uses **Gems** to store persistent instructions. No direct file import — copy-paste required.
 
----
-
 ## Create a Gem
 
 1. Go to [gemini.google.com](https://gemini.google.com) → **Gem manager** (sidebar) → **New Gem**
@@ -14,8 +12,6 @@ Gemini uses **Gems** to store persistent instructions. No direct file import —
 3. Set a name (e.g., "Direct LLM") → **Save**
 
 The Gem appears in your sidebar. Click it to start a conversation with those instructions active.
-
----
 
 ## Notes
 

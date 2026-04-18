@@ -2,8 +2,6 @@
 
 Two options: Style (applies to all chats) or Project (persistent across conversations).
 
----
-
 ## Option 1: Claude Style (recommended)
 
 Scope: all conversations, selectable per chat.
@@ -16,8 +14,6 @@ Scope: all conversations, selectable per chat.
 6. Name the style (e.g., "Direct LLM") → Save
 
 Select the style from the style picker at the start of any conversation.
-
----
 
 ## Option 2: Claude Project
 
