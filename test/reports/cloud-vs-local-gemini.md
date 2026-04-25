@@ -70,15 +70,3 @@
 **Direct LLM** est le run le plus propre sur Gemini : Direct Start, `[INFERENCE]` correct, zero fluff, profondeur technique maximale.  
 **Direct LLM Pro** apporte un cadre de décision original ("au moins 2 cases") mais perd en Direct Start et en précision technique.  
 **Les composants XML Gemini** (`<Elicitations>`, `<Steps>`) résistent partiellement à la config — comportement natif de la plateforme, non suppressible par les instructions seules.
-
----
-
-## Synthèse globale (tous tests, toutes plateformes)
-
-| | Claude DL | Claude DL Pro | Claude DL Code | Gemini DL | Gemini DL Pro |
-| :--- | :---: | :---: | :---: | :---: | :---: |
-| Direct Start (textuel) | ✓ | ✓ | ✗ | ✓ | ✗ |
-| `[INFERENCE]` | ✓ | ✓✓ | n/a | ✓ | ✗ |
-| Zero fluff | ✓ | ✓ | ✓ | ✓ | ✓ |
-| Format non sollicité supprimé | ✓ | ✓ | ✗ | ✗ partiel | ✗ |
-| Profondeur technique | ✓✓ | ✓✓ | ✓✓✓ | ✓✓ | ✓ |

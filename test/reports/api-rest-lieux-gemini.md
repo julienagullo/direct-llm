@@ -102,12 +102,3 @@
 **Direct Start** échoue sur les deux plateformes pour ce type de prompt architectural — confirmé cross-plateforme.
 
 **SVG absent sur Gemini** — contrairement à Claude, Gemini ne génère pas de diagramme SVG. Format non sollicité réduit à `<FollowUp>` (moins intrusif).
-
----
-
-## Mise à jour du test README
-
-| Prompt | Configs | Plateforme | Rapport |
-| :--- | :--- | :--- | :--- |
-| API REST lieux touristiques | baseline, direct-llm, direct-llm-code | Gemini | `reports/api-rest-lieux-gemini.md` |
-| Cloud vs Local LLM | baseline, direct-llm, direct-llm-pro | Gemini | `reports/cloud-vs-local-gemini.md` |

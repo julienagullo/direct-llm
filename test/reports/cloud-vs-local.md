@@ -77,11 +77,3 @@
 **Direct LLM Pro** est le run le plus propre sur ce test : Direct Start corrigé, profondeur maximale, réponse autonome, zero fluff.  
 **Direct LLM** est efficace et direct mais laisse une question de relance inutile.  
 **Baseline** génère du HTML non sollicité — comportement créatif qui nuit à la portabilité.
-
----
-
-## Prochains tests suggérés
-
-- Tester **Direct LLM Code** sur un prompt technique (architecture, choix de stack)
-- Répliquer le test 2 sur **Gemini** — comparer le comportement cross-plateforme
-- Prompt volontairement flawed — vérifier si les configs flag la question mal posée

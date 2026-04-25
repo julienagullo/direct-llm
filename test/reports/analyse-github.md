@@ -66,11 +66,3 @@
 
 **Direct LLM** est le run le plus propre sur ce prompt.  
 **Direct LLM Pro** est plus précis sur l'usage de `[INFERENCE]` mais l'échec Direct Start sur les prompts avec URL/action à réaliser est un point à surveiller.
-
----
-
-## Prochains tests suggérés
-
-- Prompt purement textuel (pas de URL) — vérifier si Pro corrige son Direct Start
-- Prompt technique (code/archi) — tester Direct LLM Code
-- Comptage tokens activé via API
